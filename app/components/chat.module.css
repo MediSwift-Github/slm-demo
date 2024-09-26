@@ -1,0 +1,188 @@
+/* chat.module.css */
+
+/* Parent Containers */
+.backgroundWrapper {
+    position: fixed; /* Changed from relative to fixed */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0; /* Ensure it's at the bottom */
+}
+
+
+.lottieContainer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    /* Remove display styles */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* Transitioning Elements */
+.animationWrapper,
+.characterAnimationWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.characterAnimationWrapper {
+    
+    width: 150% !important;
+    height: 120% !important;
+}
+/* Fade Transition Classes */
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Chat container with fixed size and centered on the page */
+.chatContainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 600px;
+    background-color: transparent;
+    padding: 20px;
+    z-index: 1; /* Ensure it's above the background animation */
+    margin: 0 auto; /* Center horizontally */
+    /* Center vertically if needed */
+}
+
+
+/* Messages container with dynamic height */
+.messages {
+    height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 30px;
+}
+
+.userMessage,
+.systemMessage {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.userMessage {
+    background-color: #fce1a6; /* Warm light yellow */
+    color: #333333; /* Dark gray for readability */
+    align-self: flex-start;
+}
+
+.systemMessage {
+    background-color: #fff4cc; /* Soft pale yellow */
+    color: #333333; /* Dark gray text */
+    align-self: flex-end;
+}
+
+/* Input area with the Lottie animation and the input box with the send button */
+.inputArea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /*margin-top: 20px;*/
+}
+
+/* Container for input field and send button */
+.inputWithButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding-right: 50px; /* Space for the send button */
+    padding-left: 15px; /* Padding for input text */
+}
+
+/* Input field styling */
+.inputField {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Send button inside the input field */
+.sendButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f97b55; /* Warm soft orange-red */
+    color: white; /* White for contrast */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sendButtonDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Additional styles for alignment and spacing */
+.inputArea .lottieContainer {
+    /*margin-bottom: 20px;*/
+}
+
+/* If needed, adjust z-index to manage overlapping elements */
+.backgroundWrapper {
+    z-index: 0;
+}
+
+.chatContainer {
+    z-index: 1;
+}
+
+.lottieContainer {
+    z-index: 2;
+}
+
+/* Ensure the Lottie animations are centered within their containers */
+.animationWrapper,
+.characterAnimationWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional: Adjust position of lottieContainer if needed */
+.lottieContainer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 2; /* Above chat container elements if needed */
+    /*margin-bottom: 20px; !* Adjust spacing *!*/
+}
+
